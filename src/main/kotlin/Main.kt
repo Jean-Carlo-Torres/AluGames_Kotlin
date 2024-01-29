@@ -1,6 +1,7 @@
 
 import com.google.gson.Gson
 import entities.InfoJogo
+import entities.Jogo
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -16,8 +17,11 @@ fun main() {
     var json = response.body()
     println(json)
 
-    val gson =  Gson()
-    val meuJogo = gson.fromJson(json, InfoJogo::class.java)
+    val gson = Gson()
+    val meuInfoJogo = gson.fromJson(json, InfoJogo::class.java)
 
-    println(meuJogo)
+    val meuJogo = Jogo(
+        meuInfoJogo.info.title,
+        meuInfoJogo.info.thumb
+    )
 }

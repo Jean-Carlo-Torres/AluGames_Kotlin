@@ -1,8 +1,6 @@
 package entities
 
-import com.google.gson.annotations.SerializedName
-
-class Jogo(@SerializedName("title") val titulo: String, @SerializedName("thumb") val capa: String) {
+data class Jogo(val titulo: String, val capa: String) {
     var descricao = ""
 
     override fun toString(): String {
