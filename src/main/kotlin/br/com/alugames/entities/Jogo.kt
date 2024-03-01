@@ -1,7 +1,7 @@
-package entities
+package br.com.alugames.entities
 
 data class Jogo(val titulo: String, val capa: String) {
-    var descricao = ""
+    var descricao: String? = null
 
     override fun toString(): String {
         return "Titúlo: $titulo \n" +
