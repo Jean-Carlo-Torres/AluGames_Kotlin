@@ -1,4 +1,4 @@
-package br.com.alugames.entities
+package br.com.alugames.models
 
 data class Jogo(val titulo: String, val capa: String) {
     var descricao: String? = null

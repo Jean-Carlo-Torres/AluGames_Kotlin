@@ -1,5 +1,7 @@
-import br.com.alugames.entities.Jogo
-import br.com.alugames.servicos.ConsumoApi
+package br.com.alugames.principal
+
+import br.com.alugames.models.Jogo
+import br.com.alugames.services.ConsumoApi
 import java.util.*
 
 fun main() {

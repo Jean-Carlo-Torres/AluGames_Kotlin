@@ -1,6 +1,6 @@
-package br.com.alugames.servicos
+package br.com.alugames.services
 
-import br.com.alugames.entities.InfoJogo
+import br.com.alugames.models.InfoJogo
 import com.google.gson.Gson
 import java.net.URI
 import java.net.http.HttpClient
