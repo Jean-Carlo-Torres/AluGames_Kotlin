@@ -1,5 +1,6 @@
 package br.com.alugames.models
 
+import transformarEmIdade
 import java.util.*
 import kotlin.random.Random
 
@@ -17,12 +18,12 @@ data class Gamer(var nome: String, var email: String) {
 
     val jogosBuscados = mutableListOf<Jogo?>()
 
-    constructor(nome: String, email: String, dataDeNascimento: String, usuario: String) : this(
+    constructor(nome: String, email: String, usuario: String, dataDeNascimento: String) : this(
         nome,
         email
     ) {
-        this.dataDeNascimento = dataDeNascimento
         this.usuario = usuario
+        this.dataDeNascimento = dataDeNascimento
         criarIdInterno()
     }
 
@@ -34,11 +35,13 @@ data class Gamer(var nome: String, var email: String) {
     }
 
     override fun toString(): String {
+        val idade = dataDeNascimento?.transformarEmIdade() ?: 0
         return "Gamer(nome='$nome', " +
                 "email='$email', " +
                 "dataDeNascimento=$dataDeNascimento, " +
                 "usuario=$usuario, " +
-                "idInterno=$idInterno)"
+                "idInterno=$idInterno, " +
+                "Idade= $idade)"
     }
 
     fun criarIdInterno() {
